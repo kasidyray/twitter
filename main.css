@@ -1,0 +1,159 @@
+body {
+  margin: 0;
+  Font-family: Segoe UI;
+  background: #e6e6e6;
+  color: #ffff;
+}
+
+h1, p {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  background: #0c0c0c;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+  padding-bottom: 7em;
+}
+
+figure {
+  margin: 0;
+}
+
+header {
+  margin: 0 auto;
+  padding: 1em;
+  background: #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header figure {
+  width: 32px;
+  height: 32px;
+  background: #ff9900;
+  border-radius: 50%;
+  background: url("https://source.unsplash.com/random/30x30") no-repeat;
+  background-size: cover;
+}
+
+header span {
+  font-weight: 700;
+  font-size: 1.3em;
+  padding-left: 1em;
+  color: #fff;
+}
+
+.tweet {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1em;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin-bottom: .2em;
+  border-bottom: 1px solid #ffffff17;
+}
+
+.tweet .signature {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.tweet .signature .more {
+  margin-left: auto;
+  opacity: .5;
+  cursor: pointer;
+}
+
+.tweet figure {
+  width: 48px;
+  height: 48px;
+  background: #fff;
+  border-radius: 50%;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  background: url("https://source.unsplash.com/random/50x51") no-repeat;
+}
+
+.tweet .tweet-content {
+  padding-left: .5em;
+}
+
+.tweet .tweet-content .username {
+  font-weight: bold;
+}
+
+.tweet .tweet-content .tweet-text {
+  opacity: .9;
+  margin-bottom: 1em;
+}
+
+.tweet .tweet-content .handle, .tweet .tweet-content .timestamp {
+  opacity: .5;
+}
+
+.tweet .tweet-content .tweet-image {
+  width: 100%;
+  padding-bottom: 1em;
+  border-radius: 10px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: top;
+     object-position: top;
+}
+
+.tweet .tweet-content .tweet-actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  opacity: .5;
+}
+
+.tweet .tweet-content .tweet-actions li:not(:first-child) {
+  padding-left: 2em;
+}
+
+.tweet .tweet-content .tweet-actions li:last-child {
+  margin-left: auto;
+}
+
+.action-tab {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #ffffff;
+  padding: 1.5em 1em;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  text-align: center;
+}
+
+.action-tab span {
+  cursor: pointer;
+  color: #232323;
+  font-size: 2em;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+/*# sourceMappingURL=main.css.map */
