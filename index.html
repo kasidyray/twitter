@@ -12,7 +12,7 @@
 <body>
     <main>
 
-        <div class="action-tab">
+        <div class="action-tab" id="actions">
             <span class="home"><i class="icon ion-md-home"></i></span>
             <span class="search"><i class="icon ion-md-search"></i></span>
             <span class="notification"><i class="icon ion-md-notifications"></i></span>
@@ -94,6 +94,15 @@
         </div>
 
     </main>
+
+    <script>
+        window.onscroll = function(){
+            if(window.pageYOffset > 50){
+                document.getElementById('actions').classList.add('show');
+            } else
+            document.getElementById('actions').classList.remove('show');
+        }
+    </script>
 
 </body>
 </html>
