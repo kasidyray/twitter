@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  Font-family: Segoe UI;
+  Font-family: "Segoe UI",Arial,sans-serif;
   background: #e6e6e6;
   color: #000000;
 }
@@ -33,7 +33,7 @@ figure {
 header {
   margin: 0 auto;
   padding: 1em;
-  background: #000;
+  background: #0043ff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -66,8 +66,11 @@ header span {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  margin-bottom: .2em;
-  border-bottom: 1px solid #00000017;
+  border-bottom: 1px solid #e6ecf0;
+}
+
+.tweet:hover {
+  background: #f5f8fa;
 }
 
 .tweet .signature {
@@ -89,12 +92,14 @@ header span {
   border-radius: 50%;
   -ms-flex-negative: 0;
       flex-shrink: 0;
+  -webkit-box-shadow: 0 5px 20px #00000021;
+          box-shadow: 0 5px 20px #00000021;
   background: url("https://source.unsplash.com/random/50x51") no-repeat;
 }
 
 .tweet .tweet-content {
   padding-left: .5em;
-  font-size: .82em;
+  font-size: .9em;
   line-height: 1.5em;
 }
 
@@ -112,10 +117,15 @@ header span {
   padding-left: .3em;
 }
 
-.tweet .tweet-content .tweet-image {
+.tweet .tweet-content .image-container {
+  max-height: 250px;
+  margin-bottom: 1em;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.tweet .tweet-content .image-container .tweet-image {
   width: 100%;
-  padding-bottom: 1em;
-  border-radius: 10px;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: top;
@@ -135,6 +145,80 @@ header span {
 
 .tweet .tweet-content .tweet-actions li:last-child {
   margin-left: auto;
+}
+
+.tweet .tweet-content .tweet-actions li span {
+  padding-left: .6em;
+  opacity: .5;
+  font-weight: 500;
+}
+
+.write {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #0043ff;
+  bottom: 100px;
+  right: 13px;
+  text-align: center;
+  color: #fff;
+  font-size: 2em;
+  cursor: pointer;
+  z-index: 1;
+  -webkit-box-shadow: 0 0 30px #00000059;
+          box-shadow: 0 0 30px #00000059;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+
+.write:hover {
+  -webkit-box-shadow: 0 5px 20px #0000005c;
+          box-shadow: 0 5px 20px #0000005c;
+  background: #003adb;
+  bottom: 110px;
+}
+
+.write .up {
+  bottom: 70px;
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
+}
+
+aside.menu {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  opacity: 0;
+  background: #0009;
+  display: none;
+  z-index: 1;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+
+aside.menu .menu-content {
+  background: #ffffff;
+  width: 70%;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-box-shadow: 10px 0 20px #00000024;
+          box-shadow: 10px 0 20px #00000024;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+
+aside.menu.show-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  opacity: 1;
+}
+
+aside.menu.show-menu .menu-content {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
 }
 
 .action-tab {

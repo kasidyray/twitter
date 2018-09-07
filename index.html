@@ -4,13 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Twitter Protoype</title>
     <link rel="stylesheet" href="main.css">
     <link href="https://unpkg.com/ionicons@4.4.2/dist/css/ionicons.min.css" rel="stylesheet">
 </head>
 
 <body>
     <main>
+        <div class="write" id="compose"><i class="icon ion-ios-color-wand"></i></div>
+        <aside class="menu" id="offcanvas">
+            <div class="menu-content">
+                <div class="account-info"></div>
+                <div class="account-config"></div>
+                <div class="account-extra"></div>
+            </div>
+        </aside>
 
         <div class="action-tab" id="actions">
             <span class="home"><i class="icon ion-md-home"></i></span>
@@ -20,7 +28,7 @@
         </div>
         
         <header>
-            <figure></figure>
+            <figure class="account-avatar" id="menu"></figure>
             <span>Home</span>
         </header>
 
@@ -36,8 +44,9 @@
                 <p class="tweet-text">
                     Did you know Durex Fetherlite Ultra condoms are Ultra thin for even greater sensitivity?
                 </p>
-                <img class="tweet-image" src="https://source.unsplash.com/random/800x600" alt="">
-
+                <div class="image-container">
+                    <img class="tweet-image lazy" src="https://placeholder.pics/svg/600x400/EFEFEF/Loading" data-src="https://source.unsplash.com/random/800x650" alt="">
+                </div>  
                <ul class="tweet-actions">
                    <li class="first"><i class="icon ion-md-arrow-up"></i> <span class="comment-count">56</span> </li>
                    <li><i class="icon ion-md-repeat"></i> <span class="retweet-count">56</span> </li>
@@ -59,8 +68,9 @@
                 <p class="tweet-text">
                     Did you know Durex Fetherlite Ultra condoms are Ultra thin for even greater sensitivity?
                 </p>
-                <img class="tweet-image" src="https://source.unsplash.com/random/800x500" alt="">
-
+                <div class="image-container">
+                    <img class="tweet-image lazy" src="https://placeholder.pics/svg/600x400/EFEFEF/Loading" data-src="https://source.unsplash.com/random/800x620" alt="">
+                </div>
                 <ul class="tweet-actions">
                     <li class="first"><i class="icon ion-md-arrow-up"></i> <span class="comment-count">56</span> </li>
                     <li><i class="icon ion-md-repeat"></i> <span class="retweet-count">56</span> </li>
@@ -82,8 +92,57 @@
                 <p class="tweet-text">
                     Did you know Durex Fetherlite Ultra condoms are Ultra thin for even greater sensitivity?
                 </p>
-                <img class="tweet-image" src="https://source.unsplash.com/random/800x550" alt="">
+                <div class="image-container">
+                    <img class="tweet-image lazy" src="https://placeholder.pics/svg/600x400/EFEFEF/Loading" data-src="https://source.unsplash.com/random/800x610" alt="">
+                </div>
+                <ul class="tweet-actions">
+                    <li class="first"><i class="icon ion-md-arrow-up"></i> <span class="comment-count">56</span> </li>
+                    <li><i class="icon ion-md-repeat"></i> <span class="retweet-count">56</span> </li>
+                    <li><i class="icon ion-md-heart"></i> <span class="like-count">56</span> </li>
+                    <li class="last">share <i class="icon ion-md-share-alt"></i></li>
+                </ul>
+            </div>
+        </div>
 
+        <div class="tweet">
+            <figure class="user-avatar"></figure>
+            <div class="tweet-content">
+                <div class="signature">
+                    <span class="username">Durex Nigeria</span>
+                    <span class="handle">@DurexNG</span>
+                    <span class="timestamp">. 21h</span>
+                    <span class="more"><i class="icon ion-ios-arrow-down"></i></span>
+                </div>
+                <p class="tweet-text">
+                    Did you know Durex Fetherlite Ultra condoms are Ultra thin for even greater sensitivity?
+                </p>
+                <div class="image-container">
+                    <img class="tweet-image lazy" src="https://placeholder.pics/svg/600x300/DEDEDE/555555/Loading" data-src="https://source.unsplash.com/random/800x630" alt="">
+                </div>
+                <ul class="tweet-actions">
+                    <li class="first"><i class="icon ion-md-arrow-up"></i> <span class="comment-count">56</span> </li>
+                    <li><i class="icon ion-md-repeat"></i> <span class="retweet-count">56</span> </li>
+                    <li><i class="icon ion-md-heart"></i> <span class="like-count">56</span> </li>
+                    <li class="last">share <i class="icon ion-md-share-alt"></i></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tweet">
+            <figure class="user-avatar"></figure>
+            <div class="tweet-content">
+                <div class="signature">
+                    <span class="username">Durex Nigeria</span>
+                    <span class="handle">@DurexNG</span>
+                    <span class="timestamp">. 21h</span>
+                    <span class="more"><i class="icon ion-ios-arrow-down"></i></span>
+                </div>
+                <p class="tweet-text">
+                    Did you know Durex Fetherlite Ultra condoms are Ultra thin for even greater sensitivity?
+                </p>
+                <div class="image-container">
+                    <img class="tweet-image lazy" src="https://placeholder.pics/svg/600x300/DEDEDE/555555/Loading" data-src="https://source.unsplash.com/random/800x620" alt="">
+                </div>
                 <ul class="tweet-actions">
                     <li class="first"><i class="icon ion-md-arrow-up"></i> <span class="comment-count">56</span> </li>
                     <li><i class="icon ion-md-repeat"></i> <span class="retweet-count">56</span> </li>
@@ -99,9 +158,45 @@
         window.onscroll = function(){
             if(window.pageYOffset > 50){
                 document.getElementById('actions').classList.add('show');
+                document.getElementById('compose').classList.add('up');
             } else
             document.getElementById('actions').classList.remove('show');
+            document.getElementById('compose').classList.remove('up');
         }
+
+        var menu = document.getElementById('menu');
+        menu.onclick = function(){
+            console.log('Menu Clicked');
+            document.getElementById('offcanvas').classList.add('show-menu');
+        };
+
+        document.getElementById('offcanvas').onclick = function(){
+            this.classList.toggle('show-menu')
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+
+            if ("IntersectionObserver" in window) {
+                let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                    let lazyImage = entry.target;
+                    lazyImage.src = lazyImage.dataset.src;
+                    lazyImage.classList.remove("lazy");
+                    lazyImageObserver.unobserve(lazyImage);
+                    }
+                });
+                });
+
+                lazyImages.forEach(function(lazyImage) {
+                lazyImageObserver.observe(lazyImage);
+                });
+            } else {
+                // Possibly fall back to a more compatible method here
+            }
+        });
+
     </script>
 
 </body>
